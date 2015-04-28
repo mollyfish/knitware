@@ -1,66 +1,103 @@
 body {
-  width: 100%;
+  width: 99%;
+  max-width: 1200px;
   font-size: 1em;
   color: #000;
   font-family: Verdana, Geneva, sans-serif;
   font-size: 1em;
+  margin: 1em;
+  background-image: url('../images/knitted.jpg');
+}
+header {
+  background: #fff;
+  padding: 1em 2em;
 }
 main {
-  min-height: 455px;
-  position: relative;
+  min-height: 465px;
+  background: #fff;
+  padding: 1em 2em;
 }
 footer {
   font-size: 55%;
   text-align: center;
-  height: 2em;
+  padding-top: 2em;
+  height: 2.5em;
+  background: #fff;
 }
 /*--TEXT AND LINKS--------------------------------*/
 h1 {
   font-size: 350%;
+  margin-bottom: .2em;
+  color: #4d4d4d; 
 }
 h2 {
   font-size: 200%;
+  font-weight: bolder;
+  margin: .8em 0 .3em 0;
+  color: #4d4d4d;
 }
 h3 {
   font-size: 150%;
+  font-weight: bolder;
+  color: #060604;
+  margin-top: .5em;
 }
 h4 {
   font-size: 110%;
+  font-weight: bolder;
+  color: #3e3026;
 }
 a:link {
-  color: #ffdf3f;
+  text-decoration: none;
+  color: #9c9084;
 }
 a:visited {
-  color: #ffdf3f;
+  color: #4d4d4d;
 }
 a:hover {
-  color: #df4c25;
+  color: #9c9084;
+  text-decoration: underline;
 }
 /*--NAVIGATION--------------------------------*/
 nav button {
-  width: 25%;
-  height: 50px;
+  width: 23%;
+  border: 1px solid #322016;
+  border-radius: 10px;
   text-shadow: 0px 1.5px 1.5px rgba(0,0,0,0.3);
+  background-color: #e0e6e6;
+  color: #322016;
+  font-size: 160%;
+  padding: .4em 0;
+  margin-right: .5em;
 }
-.nav:hover {
-  background-color: rgba(0,0,0,0.3);
-  color: #fff;
+nav button:hover {
+  background-color: #9B9084; /*rgba(0,0,0,0.3)*/
+  color: #e0e6e6;
 }
-#nav-home {
-  border: 2px solid #fede3d;
-}
-#nav-design {
-  border: 2px solid #29d4ce;
-}
-#nav-pattern {
-  border: 2px solid #63cb2a;
-}
-#nav-about {
-  border: 2px solid #df4c25;
+#nav-home, #nav-design, #nav-pattern, #nav-about {
+  background-color: #AC855E; 
+  color: #e0e6e6;
+  /*border: 1px solid #322016;*/
 }
 /*--CONTENT--------------------------------*/
+p {
+  margin: 1em;
+  line-height: 1.3em;
+  letter-spacing: .02em;
+}
+p.notable {
+  margin: 0 0 .5em 0;
+}
+p .emphasis {
+  font-weight: bolder;
+}
+ol {
+  list-style: decimal;
+  margin: .5em 4em;
+  line-height: 2em;
+}
 .colorize {
-  color: #fede3d;
+  color: #AC855E;
   font-weight: bolder;
   font-size: 1.2em;
 }
@@ -74,6 +111,22 @@ nav button {
 .team-member img {
   margin-top: 1em;
   margin-right: 1em;
+}
+#alternate-enter-name {
+  width: 50%;
+  margin: 0 auto; 
+  border: 1px solid #060604;
+  border-radius: 10px;
+  padding: 1em;
+}
+#alternate-enter-name p {
+  margin: 0;
+}
+#alternate-enter-name button {
+  margin: 1em 0;
+}
+p#second-time {
+  margin-top: .5em;
 }
 #molly {
   border: 1px solid #3a9d82;
@@ -92,12 +145,12 @@ nav button {
 /*--TABLES--------------------------------*/
 table {
   text-align: left;
-  border: 1px solid #fff;
+  border: 1px solid #060604;
   margin-top: 1em;
   margin-left: 1em;
 }
 th, td {
-  padding: .2em;
+  padding: .4em;
   margin: .1em;
 }
 th {
@@ -108,23 +161,49 @@ th {
 /*--FORMS--------------------------------*/
 form {
   width: 50%;
+  margin: 2em auto 0 auto;
+  padding: 1em;
+  border: 1px solid #060604;
+  border-radius: 10px;
+}
+legend {
+  font-weight: 300;
+}
+fieldset p {
+  margin: .8em 0 .5em 1em;
+}
+fieldset .show-on-arrival, .show-on-arrival input {
+  padding: 0 0 1em 0;
+}
+fieldset#size-choice input, fieldset#design-choices input {
+  margin-top: -2px;
+  margin-right: 4px;
+}
+fieldset#size-choice label, fieldset#design-choices label {
+  margin: 0 0 .5em 1em;
 }
 label.disabled {
   color: #393939;
 }
+#name-save {
+  margin: 0 auto;
+}
 #save-new-design {
   position: relative;
+  width: 42%;
+  margin: 2em 0 0 0;
   padding-bottom: 5em;
+}
+#knitter-name {
+  margin-left: 5px;
 }
 /*--CANVAS--------------------------------*/
 #render {
   position: fixed;
-  top: 200px;
-  right: 20px;
+  top: 28%;
+  left: 50%;
   width: 501px;
   height: 361px;
-  background-color: #fff;
-  border-radius: 10px;
 }
 #canvas1, #canvas2, #canvas3, #canvas4 {
   position: absolute;
@@ -133,120 +212,61 @@ label.disabled {
 }
 /*--BUTTONS--------------------------------*/
 button {
+  font-size: 120%;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+  background-color: #9B9084;
+  color: #e0e6e6;
   padding: 1em;
-  border: 0px solid #000;
-  color: #000;
-  cursor: pointer;
-  text-shadow: 0px 1.0px 2.0px #000;
 }
 button:disabled {
   color: #393939;
 }
-#to-previous-pattern {
-  font-size: 120%;
-  border: 1px solid #63cb2a;
-  border-radius: 10px;
-  background-color: rgba(0,0,0,0.2);
+button:hover {
+  background-color: #AC855E;
   color: #fff;
-}
-#to-previous-pattern:hover {
-  background-color: #63cb2a;
-}
-#clearPattern {
-  font-size: 120%;
-  border: 1px solid #fede3d;
-  background-color: rgba(0,0,0,0.2);
-  border-radius: 10px;
-  color: #fff;
-}
-#clearPattern:hover {
-  background-color: #fede3d;
-}
-#start-design, #submit {
-  font-size: 120%;
-  color: #fff;
-  border-radius: 10px;
 }
 #submit {
-  border: 1px solid #fede3d;
-  background-color: rgba(0,0,0,0.2);
-}
-#submit:hover {
-  background-color: #fede3d;
-}
-#start-design:hover {
-  background-color: #29d4ce;
-  color: #fff;
-}
-#start-design {
-  border: 1px solid #29d4ce;
-  background-color: rgba(0,0,0,0.2);
-}
-#first-step {
-  margin-top:;
-  text-shadow: 0px 1px 1px black;
-  border: 1px solid hsla(178, 83%, 55%, 0.8);
-  border-radius: 10px;
-  background-color: hsla(0, 0%, 0%, 0.0);
-  color: #fff;
-}
-#first-step:hover {
-  text-shadow: 0px 1px 1px black;
-  color: #fff;
-  background-color: hsla(178, 83%, 55%, 0.8);
+  margin-left: 1em;
 }
 #save-design {
   position: absolute;
   bottom: 1em;
   left: 1em;
-  text-shadow: 0px 1px 1px black;
-  font-size: 120%;
-  border: 1px solid hsla(178, 83%, 55%, 0.8);
-  border-radius: 10px;
-  background-color: hsla(0, 0%, 0%, 0.0);
-  color: #fff;
-}
-#save-design:hover {
-  text-shadow: 0px 1px 1px black;
-  color: #fff;
-  background-color: hsla(178, 83%, 55%, 0.8);
 }
 #go-to-pattern {
   position: absolute;
   bottom: 1em;
   right: 1em;
-  text-shadow: 0px 1px 1px black;
-  font-size: 120%;
-  border: 1px solid hsla(99, 83%, 56%, 0.9);
-  border-radius: 10px;
-  background-color: hsla(0, 0%, 0%, 0.0);
-  color: #fff;
 }
-#go-to-pattern:hover {
-  background-color: hsla(99, 83%, 56%, 0.9);
-  text-shadow: 0px 1px 1px black;
+#first-step, #print-this, #hide-molly {
+  font-size: 80%;
+}
+#first-step {
+  margin: -15px 0 0 1em;
 }
 #print-this {
-  color: #fff;
-  border: 1px solid hsla(99, 83%, 56%, 0.9);
-  margin-top: 1em;
-  margin-bottom: 1.5em;
-  background-color: hsla(0, 0%, 0%, 0.0);
-  border-radius: 10px;
-  text-shadow: 0px 1.5px 1.5px black;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: #AC855E;
+  text-decoration: underline;
+  margin: 0;
+  padding: 0; 
 }
 #print-this:hover {
-  background-color: hsla(99, 83%, 56%, 0.9);
-  text-shadow: 0px 1.0px 1.0px black;
+  cursor: pointer;
 }
-#hide-molly {
-  margin: 1em auto;
-  text-shadow: 0px 1px 1px black;
-  border: 1px solid #3a9d82;
-  border-radius: 10px;
-  background-color: rgba(0,0,0,.4);
-  color: white;
-}
-#hide-molly:hover{
-  background-color: #3a9d82;
+/*--RESPONSIVE--------------------------------*/
+@media screen and (max-width: 1130px) {
+  #render {
+    position: relative;
+    top: 1em;
+    left: 0;
+    margin: 0;
+    padding: 0;
+  }
+  #save-new-design {
+    width: 50%;
+  }
 }

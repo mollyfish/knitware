@@ -80,20 +80,20 @@ $(function(){
     localStorage.setItem('user', JSON.stringify(currentUser));
     localStorage.setItem('sizes', JSON.stringify(sizes)); 
     $('#submit').hide();
-    $('#start-design').fadeIn();
+    $('#start-design').fadeIn(300);
   });
 
   var visited = JSON.parse(localStorage.getItem('visited'));
   var secondTime = function() {
-    var $retrieveOldSweater = $('<p><span class="colorize">Hello! It looks like you\'ve been here before.</span></p><p id="secondTime">Want to retrieve the sweater you made last time?</p>');
+    var $retrieveOldSweater = $('<p><span class="colorize">Hello! It looks like you\'ve been here before.</span></p><p id="second-time">Want to retrieve the sweater you made last time?</p>');
     if (visited === true) {
       $('#enter-name').hide();
       var $newHomeSection = $('<section id="alternate-enter-name"></section>');
       $('.welcome').after($newHomeSection);
       $newHomeSection.append($retrieveOldSweater);
       var $homePatternButton = $('<button id="to-previous-pattern">Yes, view pattern »</button>');
-      $('p#secondTime').after($homePatternButton);
-      var $startNewDesign = $('<p id="startNew">If you\'d like to make a new pattern clear your old pattern first.</p>');
+      $('p#second-time').after($homePatternButton);
+      var $startNewDesign = $('<p id="startNew">If you\'d like to make a new pattern, clear your old pattern first.</p>');
       $('#alternate-enter-name').append($startNewDesign);
       var $clearButton = $('<button id="clearPattern">Clear old pattern</button>');
       $('p#startNew').after($clearButton);

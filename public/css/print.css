@@ -10,16 +10,25 @@ body, main, #directions{
   display: none;
 }
 h1 {
-  font-size: 150%;
+  font-size: 110%;
   color: #000;
+  margin-top: 0;
 }
 h4 {
   margin: .5em 0;
+  font-weight: normal;
 }
 p {
+  font-size: 80%;
   margin: .3em 1em;
-  line-height: 1.1em;
+  line-height: 1.3em;
 }
 table {
   border-color: #000;
+}
+th, td {
+  padding: .2em;
+}
+ol {
+  line-height: 1.2em;
 }

@@ -1,5 +1,5 @@
 $(function() {
-  $('h4:not(.show-on-arrival)').hide();
+  $('legend:not(.show-on-arrival)').hide();
   $('label:not(.show-on-arrival)').hide();
   $('p:not(.show-on-arrival)').hide();
   $('hr:not(.show-on-arrival)').hide()
@@ -9,7 +9,7 @@ $(function() {
 
 $(function() {
   $('#first-step').click(function() {
-    $('.choices').fadeIn(700);
+    $('.direction').fadeIn(700);
     $('#first-step').hide();
   });
 });
