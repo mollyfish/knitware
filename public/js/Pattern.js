@@ -8,23 +8,50 @@ $(function() {
   var retEase = JSON.parse(localStorage.getItem('ease'));
   var retNeedles = JSON.parse(localStorage.getItem('needles'));
   var sizeIndex;
-    if (retUser.size === 'XS') {
+  var displaySize;
+    if (retUser.size === 'WXS') {
       sizeIndex = 0;
+      displaySize = 'Women\'s X-Small'
     }
-    if (retUser.size === 'S') {
+    if (retUser.size === 'WS') {
       sizeIndex = 1;
+      displaySize = 'Women\'s Small'
     }
-    if (retUser.size === 'M') {
+    if (retUser.size === 'WM') {
       sizeIndex = 2;
+      displaySize = 'Women\'s Medium'
     }
-    if (retUser.size === 'L') {
+    if (retUser.size === 'WL') {
       sizeIndex = 3;
+      displaySize = 'Women\'s Large'
     }
-    if (retUser.size === 'XL') {
+    if (retUser.size === 'WXL') {
       sizeIndex = 4;
+      displaySize = 'Women\'s X-Large'
     }
-    if (retUser.size === 'XXL') {
+    if (retUser.size === 'WXXL') {
       sizeIndex = 5;
+      displaySize = 'Women\'s 2X'
+    }
+    if (retUser.size === 'MS') {
+      sizeIndex = 6;
+      displaySize = 'Men\'s Small'
+    }
+    if (retUser.size === 'MM') {
+      sizeIndex = 7;
+      displaySize = 'Men\'s Medium'
+    }
+    if (retUser.size === 'ML') {
+      sizeIndex = 8;
+      displaySize = 'Men\'s Large'
+    }
+    if (retUser.size === 'MXL') {
+      sizeIndex = 9;
+      displaySize = 'Men\'s X-Large'
+    }
+    if (retUser.size === 'MXXL') {
+      sizeIndex = 10;
+      displaySize = 'Men\'s 2X'
     }
   var retHemCO = JSON.parse(localStorage.getItem('castOn'));
   var retTorsoR = JSON.parse(localStorage.getItem('torsoR'));
@@ -53,7 +80,6 @@ $(function() {
   var retDecInt2 = JSON.parse(localStorage.getItem('decInt2'));
   var retDecInt3 = JSON.parse(localStorage.getItem('decInt3'));
   var retDecInt4 = JSON.parse(localStorage.getItem('decInt4'));
-  var displaySize = retSizes[sizeIndex].label;
   var displayWidth = (retSizes[sizeIndex].chest + retEase) / 2;
   var displaySleeve = retSizes[sizeIndex].sleeve;
   var displayTorso = retSizes[sizeIndex].sideSeam;

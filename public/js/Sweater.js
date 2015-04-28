@@ -12,23 +12,38 @@ $(function() {
   var retrievedUser = JSON.parse(localStorage.getItem('user'));
   var retrievedSizes = JSON.parse(localStorage.getItem('sizes'));
   var sizeIndex;
-    if (retrievedUser.size === 'XS') {
+    if (retrievedUser.size === 'WXS') {
       sizeIndex = 0;
     }
-    if (retrievedUser.size === 'S') {
+    if (retrievedUser.size === 'WS') {
       sizeIndex = 1;
     }
-    if (retrievedUser.size === 'M') {
+    if (retrievedUser.size === 'WM') {
       sizeIndex = 2;
     }
-    if (retrievedUser.size === 'L') {
+    if (retrievedUser.size === 'WL') {
       sizeIndex = 3;
     }
-    if (retrievedUser.size === 'XL') {
+    if (retrievedUser.size === 'WXL') {
       sizeIndex = 4;
     }
-    if (retrievedUser.size === 'XXL') {
+    if (retrievedUser.size === 'WXXL') {
       sizeIndex = 5;
+    }
+    if (retrievedUser.size === 'MS') {
+      sizeIndex = 6;
+    }
+    if (retrievedUser.size === 'MM') {
+      sizeIndex = 7;
+    }
+    if (retrievedUser.size === 'ML') {
+      sizeIndex = 8;
+    }
+    if (retrievedUser.size === 'MXL') {
+      sizeIndex = 9;
+    }
+    if (retrievedUser.size === 'MXXL') {
+      sizeIndex = 10;
     }
   var patternLibrary = [];
   var counter = 0;
@@ -66,9 +81,8 @@ $(function() {
     var backLength = retrievedSizes[sizeIndex].backLength;
     var armHole = retrievedSizes[sizeIndex].armHole;
     var torsoLengthR = Math.round((backLength - armHole + 6) * rowsPerInch);
-    var torsoLengthIn = backLength - armHole + 6;
     localStorage.setItem('torsoR', JSON.stringify(torsoLengthR));
-    localStorage.setItem('torsoIn', JSON.stringify(torsoLengthIn));
+    localStorage.setItem('torsoIn', JSON.stringify(backLength));
   };
   Sweater.prototype.yokeSleeves = function() {
     arrayIndex = counter - 1;
