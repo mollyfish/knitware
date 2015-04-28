@@ -183,7 +183,7 @@ fieldset#size-choice label, fieldset#design-choices label {
   margin: 0 0 .5em 1em;
 }
 label.disabled {
-  color: #393939;
+  color: #dedede;
 }
 #name-save {
   margin: 0 auto;
