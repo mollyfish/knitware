@@ -18,7 +18,7 @@
 <link type="text/css" href="css/pure_forms.css" rel="stylesheet"/>
 <link type="text/css" href="css/app.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
-<link rel="shortcut icon" href="images/PKlogo.ico" />
+<link rel="shortcut icon" href="images/favicon.png" />
 
 <!-- CONTENT
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -33,39 +33,40 @@
       <a href="index.html"><button>Home</button></a><a href="design.html"><button id="nav-design">Design</button></a><a href="pattern.html"><button>Pattern</button></a><a href="about.html"><button>About</button></a><!-- NOT CALLED; styles button border -->
     </nav>
   </header>
-  <main>
+  <main id="render-rel">
     <section>
       <p class="design-instructions">Design your custom sweater.</p>
       <form class="pure-form pure-form-aligned" id="save-new-design"><!-- #save-new-design CALLED IN SWEATER -->
-        <fieldset class="pure-control-group">
-          <h4 class="show-on-arrival">Get Started</h4>
-          <hr class="show-on-arrival"/>
-          <label class="show-on-arrival" for="project-name">Sweater Name <input type="text" name="project-name" id="project-name" class="show-on-arrival" placeholder="Best Sweater Ever"></label><!-- #project-name CALLED IN SWEATER -->
-          <label class="show-on-arrival" for="needle-size">Needle Size <input type="text" name="needle-size" placeholder="0.0" id="needle-size" class="show-on-arrival" size="6"></label><!-- #needle-size CALLED IN SWEATER -->
-          <label class="show-on-arrival" for="stitch-gauge">Stitch-Gauge (over 4 inches) <input type="text" name="stitch-gauge" placeholder="0.0" id="stitch-gauge" class="show-on-arrival" size="6"></label><!-- #stitch-gauge CALLED IN SWEATER -->
-          <label class="show-on-arrival" for="row-gauge">Row-Gauge (over 4 inches) <input type="text" name="row-gauge" placeholder="0.0" id="row-gauge" class="show-on-arrival" size="6"></label><!-- #row-gauge CALLED IN SWEATER -->
-          <button class="show-on-arrival" id="first-step">Choose Styles »</button>
-          <!-- #first-step CALLED IN DESIGN -->
-          <h4 class="choices">Design Your Sweater</h4><!-- CALLED IN DESIGN -->
-          <hr class="choices"/>
-          <p class="choices"><span>Please Note:</span> this design tool assumes you are working in the round.</p>
-          <p class="choices">How will you knit your sweater?</p>
-          <label class="choices" for="up"><input type="radio" name="direction" id="up" class="choices">Bottom-Up</label>
-          <label class="choices" for="down"><input type="radio" name="direction" id="down" class="choices">Top-down</label>
-          <p class="shoulder-construction">What sleeve/shoulder style will you use?</p>
+        <fieldset class="pure-control-group" id="foundations">
+          <legend class="show-on-arrival">Get Started</legend>
+          <!-- <hr class="show-on-arrival"/> -->
+          <label class="show-on-arrival" for="project-name">Sweater Name: <input type="text" name="project-name" id="project-name" class="show-on-arrival" placeholder="Best Sweater Ever"></label><!-- #project-name CALLED IN SWEATER -->
+          <label class="show-on-arrival" for="needle-size">Needle Size (US): <input type="text" name="needle-size" placeholder="0.0" id="needle-size" class="show-on-arrival" size="6"></label><!-- #needle-size CALLED IN SWEATER -->
+          <label class="show-on-arrival" for="stitch-gauge">Stitch-Gauge (over 4 inches): <input type="text" name="stitch-gauge" placeholder="0.0" id="stitch-gauge" class="show-on-arrival" size="6"></label><!-- #stitch-gauge CALLED IN SWEATER -->
+          <label class="show-on-arrival" for="row-gauge">Row-Gauge (over 4 inches): <input type="text" name="row-gauge" placeholder="0.0" id="row-gauge" class="show-on-arrival" size="6"></label><!-- #row-gauge CALLED IN SWEATER -->
+          </fieldset>
+        <button class="show-on-arrival" id="first-step">Choose Styles »</button><!-- #first-step CALLED IN DESIGN -->
+        <fieldset class="pure-control-group" id="design-choices" >
+          <legend class="direction">Choose Styles</legend><!-- CALLED IN DESIGN -->
+          <!-- <hr class="choices"/> -->
+          <p class="direction notable"><span class="emphasis">Please Note:</span> this design tool assumes you are working in the round.</p>
+          <p class="direction">What <span class="emphasis">direction</span> will you knit your sweater?</p>
+          <label class="direction" for="up"><input type="radio" name="direction" id="up" class="direction">Bottom-Up</label>
+          <label class="direction" for="down"><input type="radio" name="direction" id="down" class="direction">Top-down</label>
+          <p class="shoulder-construction">What <span class="emphasis">sleeve/shoulder</span> style will you use?</p>
           <label class="shoulder-construction" for="yoke"><input type="radio" name="shoulder-style" value="yoke" id="yoke">Yoke</label>
           <label class="shoulder-construction" for="set-in"><input type="radio" name="shoulder-style" value="set-in" id="set-in">Set-In</label>
           <label class="shoulder-construction" for="raglan"><input type="radio" name="shoulder-style" value="raglan" id="raglan">Raglan</label>
-          <p class="collar">What neckline will you use?</p>
+          <p class="collar">What <span class="emphasis">neckline</span> will you use?</p>
           <label class="collar" for="crew"><input type="radio" name="neck-style" id="crew">Crew</label>
           <label class="collar" for="vee"><input type="radio" name="neck-style" id="vee">Vee</label>
-          <p class="waist-shape">Will you have shaping in the torso of your sweater?</p>
+          <p class="waist-shape">Will you have <span class="emphasis">shaping</span> in the torso of your sweater?</p>
           <label class="waist-shape" for="yes-shape"><input type="radio" name="shaping" id="yes-shape">Yes</label>
           <label class="waist-shape" for="no-shape"><input type="radio" name="shaping" id="no-shape">No</label>
-          <p class="torso-length">How long will your sweater be?</p>
+          <p class="torso-length">What <span class="emphasis">length</span> will your sweater be?</p>
           <label class="torso-length" for="yes-hips"><input type="radio" name="length" id="yes-hips">Extra-long</label>
           <label class="torso-length" for="no-hips"><input type="radio" name="length" id="no-hips">Standard length</label>
-          <p class="fit">How much ease do you want?</p>
+          <p class="fit">How much <span class="emphasis">ease</span> do you want?</p>
           <label class="fit" for="close"><input type="radio" name="ease" id="close">Close-fitting (2 in)</label>
           <label class="fit" for="loose"><input type="radio" name="ease" id="loose">Loose-fitting (4 in)</label>
         </fieldset>
